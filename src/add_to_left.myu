@@ -1,0 +1,45 @@
+fn add(proj_name)
+//左边界面
+nvw(null,12,"线性布局","width=-1\n height=-2 \n BackgroundColor=#ff92ff0",b)
+nvw(null,b,"文本","text="+proj_name)
+nvw(null,b,"按钮","text=创建love文件\n width=30dp",btn)
+//创建love文件 并同步界面更新
+ssj(btn,"clicki")
+{
+  tw("创建love文件")
+  nvw(null,51,"线性布局","width=-1\n height=-2 ",d)
+  //获取工程名
+  call(proj_name,"mjava","get_proj_name.a",st_vW)
+  //更新右边的界面
+  nvw(null,d,"文本","text="+proj_name+".love")
+  nvw(null,d,"按钮","text=运行",run)
+  //打包love文件
+  fn createLove.create_zip(proj_name)
+  syso(proj_name)
+  //打包后运行.love
+  ssj(run,"clicki")
+  {
+    // tws(null,"调用可能存在延时,请稍等",2)
+    //此时获取的名称是带有.love的
+    call(proj_name,"mjava","get_proj_name.a",st_vW)
+    utw(null,"请选择启动方式","1.直接启动,(覆盖activity)\n2.手动选择启动(启动新的进程)\n 点击弹窗外面关闭弹出窗口","手动启动","直接启动",false,v)
+    {
+      
+      fn runLove.b(sss.app_build_path+"/"+proj_name)
+    }
+    else
+    {
+      tw("调用启动插件")
+  
+     fdir(sdcard)
+     //计算路径
+      ss(sdcard+"/love2d_project/bin/"+proj_name,c_proj) 
+      syso("调用路径")   
+      syso(c_proj)
+      sit(a,"classname","com.hh128.test_launcher_love","com.hh128.test_launcher_love.MainActivity")
+      sit(a, "extra", "love", c_proj)
+      uit(a,"result",1)
+    } 
+  }
+}
+end fn

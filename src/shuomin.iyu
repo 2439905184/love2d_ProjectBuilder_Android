@@ -1,0 +1,17 @@
+<View id="1" did="0" type="TextView">
+<ppt>width=-2
+height=-2
+text=使用前,请仔细阅读各种功能的使用前的弹窗提示,这里不做详细说明,\n1.2版本新增了直接解释运行工程lua代码的功能,实现原理是,先清除lovegame中的文件,然后把项目文件都复制到lovegame,然后打开love2d,love2d会自动读取main.lua并执行。\n 注意,项目文件夹下不要添加文件夹,因为是只复制文件,文件夹复制不到 \n例子:love2d_project/workspace/helloworld 目录下有 main.lua test.txt a.ttf 和dir文件夹 ,此功能只复制main.lua test.txt a.ttf dir复制不到。\n 所以复制到lovegame目录下就变成了 main.lua test.txt a.ttf 此时没有dir文件夹。 请工程所有的文件放在一起,不要再细分子文件夹
+textSize=19sp</ppt>
+<event></event>
+</View>
+<View id="2" did="0" type="TextView">
+<ppt>width=-2
+height=-2
+text=此软件有三种运行方式,一种是直接启动love2d,不做处理,还有一种是直接解释运行lua和资源文件,原理在上面也说了,第三种,直接启动.love文件,直接启动会覆盖activity,你可以选择手动选择应用来启动,这样会启动一个新的进程,但这样就不直接了
+textSize=15sp
+BackgroundColor=#ffff7d7f
+textColor=#ffffffff</ppt>
+<event></event>
+</View>
+<UIEventset></UIEventset>

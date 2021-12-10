@@ -1,0 +1,20 @@
+<View id="1" did="0" type="ProgressBar">
+<ppt>width=-1
+height=-2
+BackgroundColor=#ffd7d7d7</ppt>
+<event></event>
+</View>
+<View id="2" did="0" type="TextView">
+<ppt>width=-2
+height=-2
+text=解压中,请稍候,请不要退出,完成后,自动返回</ppt>
+<event></event>
+</View>
+<View id="3" did="0" type="TextView">
+<ppt>width=-2
+height=-2
+text=注意,此功能还未完成
+textSize=30sp</ppt>
+<event></event>
+</View>
+<UIEventset></UIEventset>

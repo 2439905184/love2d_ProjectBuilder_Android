@@ -1,0 +1,24 @@
+fn create_zip(proj_name)
+syso("源码文件目录")
+ss("%love2d_project/workspace"+"/"+proj_name,file2)
+syso(file2)
+ss("%love2d_project/bin/"+proj_name+".love",zip_path)
+fj(file2,zip_path,c)
+f(c)
+{
+   //tw("请使用文件管理器手动命名")
+  ftz("压缩任务","压缩成功","点击调用系统手动启动","@love.png")
+  {
+    fo(zip_path)
+    //tw("请使用文件管理器手动命名")
+  // fo(zip_path)
+  }
+// call(null,"mjava","rename_zip.a",zip_path)
+}
+else
+{
+  tw("压缩失败")
+  ftz("压缩任务","压缩失败","压缩失败","@love.png")
+  {}
+}
+end fn

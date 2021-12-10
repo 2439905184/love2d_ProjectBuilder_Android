@@ -1,0 +1,7 @@
+//创建工程
+fn create_lua(proj_name)
+fr("@hello.txt",main_lua)
+syso(main_lua)
+tw(main_lua)
+fw(sss.app_workspace_path+"/"+proj_name+"/main.lua",main_lua,"utf-8")
+end fn

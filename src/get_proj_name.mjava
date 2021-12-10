@@ -1,0 +1,13 @@
+import android.view.*;
+import android.widget.*;
+public String a(Button obj)
+{
+ ViewGroup o= (ViewGroup)obj.getParent();
+  syso(o);
+  tw(o);
+ TextView txt_view= o.getChildAt(0);
+ String proj_name=txt_view.getText().toString();
+ tw("工程名称:"+proj_name);
+ syso(proj_name);
+ return proj_name;
+  }

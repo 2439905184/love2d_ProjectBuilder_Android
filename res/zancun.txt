@@ -1,0 +1,27 @@
+/. fc(sss.app_workspace_path+"/"+proj_name+"/main.lua","%lovegame/main.lua",state)
+  f(state)
+  {
+  ftz("覆盖复制成功","覆盖成功","ok","@love.png")
+  { }
+  // fn runLove.startLove()
+  }
+  else
+  {
+  ftz("覆盖复制失败","覆盖失败","failed!","@love.png")
+  { }
+  }./
+  启动love2d 带.love文件参数
+      /. sit(a,"classname","org.love2d.android","org.love2d.android.GameActivity")
+      sit(a,"type","application/x-zip-compressed")
+      fdir("%love2d_project/bin",root)
+      syso("根目录")
+      syso(root)
+      //intent带参数启动
+      javanew(file,"java.io.File","String",root+"/"+proj_name)
+      syso(file)
+      cls("android.net.Uri",uri)
+      java(ceshi,uri,"android.net.Uri.fromFile","File",file)
+      syso(uri)
+      syso(ceshi)
+      sit(a,"data",ceshi)
+      uit(a,"result",1)./

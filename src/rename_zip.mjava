@@ -1,0 +1,8 @@
+import java.io.File;
+public void a(String path)
+{
+  syso("路径"+path);
+//''  File file=new File(path);
+  tw("请点击通知,手动重命名后缀");
+ 
+}

@@ -1,0 +1,32 @@
+<View id="1" did="0" type="EditText">
+<ppt>width=-1
+height=-2
+text=
+hint=请输入项目名称
+</ppt>
+<event></event>
+</View>
+<View id="2" did="0" type="TextView">
+<ppt>width=-2
+height=-2
+text=将会直接解释运行lua文件而不是打包后运行,便于更快的测试代码
+textColor=#ffff7382</ppt>
+<event></event>
+</View>
+<View id="3" did="0" type="TextView">
+<ppt>width=-2
+height=-2
+text=在使用此功能前,请先将sd卡/lovegame中的所有资源文件备份到其他地方,因为运行会覆盖原文件,同时也会清空sdcard/lovegame目录下所文件!!!!! \默认只删除lovegame下的文件,文件夹删除不了,因为必须要是空的文件夹才能删除。
+textColor=#ffff7382
+textSize=25sp</ppt>
+<event></event>
+</View>
+<View id="4" did="0" type="TextView">
+<ppt>width=-2
+height=-2
+text=相当于直接运行
+textSize=30sp
+BackgroundColor=#ff90ff86</ppt>
+<event></event>
+</View>
+<UIEventset></UIEventset>

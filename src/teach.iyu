@@ -1,0 +1,12 @@
+<View id="1" did="0" type="VideoView">
+<ppt>width=-2
+height=-2</ppt>
+<event></event>
+</View>
+<View id="2" did="0" type="Button">
+<ppt>width=-2
+height=-2
+text=按钮2</ppt>
+<event></event>
+</View>
+<UIEventset></UIEventset>

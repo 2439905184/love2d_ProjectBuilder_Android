@@ -1,0 +1,25 @@
+fn startLove()
+uapp("org.love2d.android",c)
+f(c)
+{
+  tw("启动成功")
+}
+else
+{
+  tw("启动失败")
+}
+end fn
+//使用love启动.love文件
+fn b(in_file_name)
+s a="调用系统,请稍候"
+s b="请找到love for android,并用它打开\n"
+s c="你可以选择始终使用love2d解释器打开.love文件,这样不用反复选择使用哪个软件打开\n"
+s d="如果点错了,需要进入手机的设置,清除默认是love文件的关联应用"
+utw(null,"提示",b+c+d+"\n调用系统可能有点慢,稍微等一会","确定",false,v)
+{
+  tw(a)
+  fo(in_file_name)
+  syso("love文件路径")
+  syso(in_file_name)
+}
+end fn

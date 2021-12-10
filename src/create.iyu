@@ -1,0 +1,23 @@
+<View id="1" did="0" type="EditText">
+<ppt>width=-1
+height=-2
+text=
+hint=请输入工程名称</ppt>
+<event></event>
+</View>
+<View id="2" did="0" type="EditText">
+<ppt>width=-2
+height=-2
+text=
+hint=请输入工程包名,用于生成工程,给Aide打包用
+visibility=gone</ppt>
+<event></event>
+</View>
+<View id="3" did="0" type="TextView">
+<ppt>width=-2
+height=-2
+text=注意,包名需要遵循安卓包名规范和java包名规范,具体网上找。\n 这是一个例子 com.hh.testGame\n尽量不要使用乱七八糟的特殊符号,@$%^等,也不要用数字开头,不要使用中文,不然无法打包,这是编程里安卓和java的规范
+visibility=gone</ppt>
+<event></event>
+</View>
+<UIEventset></UIEventset>

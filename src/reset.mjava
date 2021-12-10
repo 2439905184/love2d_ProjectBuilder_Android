@@ -1,0 +1,21 @@
+import java.io.*;
+import java.util.*;
+//删除类
+public void del()
+{
+  tw("删除"):
+  i.fdir("%lovegame",h);
+  syso(h);
+  File f=new File(h);
+ File[] files= f.listFiles();
+ syso(files);
+/.  boolean state=f.delete();
+  if(state)
+  {
+    tw("删除成功");
+    }
+    else
+    {
+      tw("删除失败");
+    }
+  }./

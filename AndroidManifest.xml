@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<title>love2d工程生成器</title>
+<icon>icon.png</icon>
+<packageName>com.hh128.lovebuilder</packageName>
+<versionName>1.1</versionName>
+<versionint>2</versionint>
+<sdk>15</sdk>
+<yuv>3</yuv>
+<remark></remark>
+<Permissions>android.permission.REQUEST_INSTALL_PACKAGES
+android.permission.WRITE_EXTERNAL_STORAGE
+android.permission.READ_EXTERNAL_STORAGE</Permissions>
+<createTime>2021-02-17 19:17:58</createTime>
+<upTime>2021-02-17 19:17:58</upTime>

@@ -1,0 +1,99 @@
+<View id="11" did="0" type="ScrollView">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="3" did="11" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+gravity=center_horizontal</ppt>
+<event></event>
+</View>
+<View id="5" did="3" type="ImageView">
+<ppt>width=100dp
+height=100dp
+src=@love.png
+</ppt>
+<event></event>
+</View>
+<View id="4" did="3" type="TextView">
+<ppt>width=-2
+height=-2
+text=love2d,安卓工程生成器</ppt>
+<event></event>
+</View>
+<View id="1" did="3" type="TextView">
+<ppt>width=-2
+height=-2
+text=此软件由小沙盒工作室的创始人128hh编写</ppt>
+<event></event>
+</View>
+<View id="2" did="3" type="TextView">
+<ppt>width=-2
+height=-2
+text=技术支持请加qq:2439905184</ppt>
+<event></event>
+</View>
+<View id="6" did="3" type="ImageView">
+<ppt>width=100dp
+height=100dp
+src=@studio.png</ppt>
+<event></event>
+</View>
+<View id="7" did="3" type="Button">
+<ppt>width=-2
+height=-2
+text=打开工作目录</ppt>
+<event><eventItme type="clicki">tw("调用系统请稍候,请选择文件管理器或者es文件管理器")
+fo("%love2d_project/workspace")</eventItme></event>
+</View>
+<View id="15" did="3" type="LinearLayout">
+<ppt>width=-2
+height=-2
+orientation=vertical</ppt>
+<event></event>
+</View>
+<View id="16" did="15" type="TextView">
+<ppt>width=-2
+height=-2
+text=建议使用Acode代码编辑器写代码,这个软件有代码补全和语法高亮,支持lua等多种语言,可以添加工作目录就像电脑上的代码编辑器,软件支持中文界面
+textSize=20sp
+BackgroundColor=#ff7a76ff
+textColor=#ffffffff</ppt>
+<event></event>
+</View>
+<View id="8" did="3" type="TextView">
+<ppt>width=-2
+height=-2
+text=注意,如果你没有在sd卡根目录创建lovegame文件夹,则需要手动创建,本软件假设你创建了这个文件夹。这个文件夹是用来给love2d解释运行lua脚本用的,具体参考官网wiki
+textSize=30sp
+textColor=#ffff2c00</ppt>
+<event></event>
+</View>
+<View id="9" did="3" type="Button">
+<ppt>width=-2
+height=-2
+text=内置离线视频教程</ppt>
+<event><eventItme type="clicki">tw("暂时未制作")
+uigo("teach.iyu")</eventItme></event>
+</View>
+<View id="10" did="3" type="TextView">
+<ppt>width=-2
+height=-2
+text=选择es文件管理器打开,进入此界面,然后点击属性,再点击路径即可跳转</ppt>
+<event></event>
+</View>
+<View id="12" did="3" type="ImageView">
+<ppt>width=-2
+height=-2
+src=@teach.jpg</ppt>
+<event></event>
+</View>
+<View id="13" did="3" type="ImageView">
+<ppt>width=-2
+height=-2
+src=@teach2.jpg</ppt>
+<event></event>
+</View>
+<UIEventset></UIEventset>

